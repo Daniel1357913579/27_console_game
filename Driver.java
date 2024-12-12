@@ -7,7 +7,7 @@ Adventurer ninja1 = new Ninja();
 Adventurer farm1 = new Farm();
 Adventurer snipper1 = new Sniper();
 
-
+// give 2nd and 4th tier upgrades
 }
 
 }
