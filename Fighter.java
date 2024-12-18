@@ -3,7 +3,7 @@ public class Fighter extends Adventurer{
   private int AirSupportLeft;
   private int AirSupportMax;
   public Fighter(){
-    super("No One");
+    super("No One", 20);
     this.AirSupportLeft = 1;
     this.AirSupportMax = 1;
   }
