@@ -1,6 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
-public class Game{
+public class Main{
 public static void main(String[] args){
   Adventurer playerRole;
   Adventurer enemyRole;
@@ -59,6 +59,7 @@ public static void main(String[] args){
     }
     if (enemyRole.getHP() > 0){
     System.out.println("ENEMY TURN");
+      enemyAction = Math.random();
     if (enemyAction < 1.0/3.0){
       System.out.println(enemyRole.attack(playerRole));
     }
@@ -70,11 +71,13 @@ public static void main(String[] args){
     }
     }
     else{
-      System.out.println("Enemy has died");
+      System.out.println("The enemy has died");
       System.out.println(" You have won!");
       p.close();
       System.exit(0);
     }
+    System.out.println("Your Statistics: \n ROLE: " + playerRole.getName() + "\n HP: " + playerRole.getHP() + "\n Special Attack Name: " + playerRole.getSpecialName() + "\n Special Attacks Left: " + playerRole.getSpecial());
+    System.out.println("Enemy Statistics: \n ROLE: " + enemyRole.getName() + "\n HP: " + enemyRole.getHP() + "\n Special Attack Name: " + enemyRole.getSpecialName() + "\n Special Attacks Left: " + enemyRole.getSpecial());
     System.out.println("PLAYER TURN \n Type: attack / special / support / quit");
     playerAction = p.nextLine();
     }
