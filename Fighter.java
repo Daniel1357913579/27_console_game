@@ -1,30 +1,31 @@
 import java.util.Random;
 public class Fighter extends Adventurer{
-  private int AirSupportLeft;
-  private int AirSupportMax;
+  private int putinCallsLeft;
+  private int putinCallsMax;
   public Fighter(){
-    super("No One", 20);
-    this.AirSupportLeft = 1;
-    this.AirSupportMax = 1;
+    super("Kung Fu pAnDa", 30);
+    this.putinCallsLeft = 1;
+    this.putinCallsMax = 1;
   }
+
   public Fighter(String name, int hp){
     super(name);
     this.setHP(hp);
     this.setmaxHP(hp);
-    this.AirSupportLeft= 1;
-    this.AirSupportMax = 1;
+    this.putinCallsLeft= 1;
+    this.putinCallsMax = 1;
   }
   public String getSpecialName(){
-    return "Air Support";
+    return "Putin";
   }
   public int getSpecial(){
-    return this.AirSupportLeft;
+    return this.putinCallsLeft;
   }
   public void setSpecial(int n){
-    this.AirSupportLeft = n;
+    this.putinCallsLeft = n;
   }
   public int getSpecialMax(){
-    return this.AirSupportMax;
+    return this.putinCallsMax;
   }
 
   public String attack(Adventurer other){
@@ -37,31 +38,31 @@ public class Fighter extends Adventurer{
     }
     String message =  this + " attacked " + other + " and dealt " + damage + " points of damage";
     if (specialRestored){
-      message += " and regained Air Support";
+      message += " and might have regained a chance to call Putin";
     }
     message += ".";
     return message;
   }
   public String support(Adventurer other){
-    if (other.getmaxHP() > other.getHP() + 2){
-    other.setHP(other.getHP() + 2);
-    return this + " tends to " + other + "'s wounds and restored 2 hp";
+    if (other.getmaxHP() > other.getHP() + 5){
+      other.setHP(other.getHP() + 6);
+      return this + " tends to " + other + "'s wounds and restored 6 hp";
     }
-    return other + "'s MaxHP is full";
+    return other + "'s HP is full";
   }
   public String support(){
     if (this.getmaxHP() > this.getHP() + 5){
-    this.setHP(this.getHP() + 5);
-    return this + "tends to their own wounds and restored 5 hp";
+    this.setHP(this.getHP() + 6);
+    return this + "tends to their own wounds and restored 6 hp";
   }
-    return this + "'s MaxHP is full";
+    return this + "'s HP is full. They have no wounds.";
   }
   public String specialAttack(Adventurer other){
     if (this.getSpecial() > 0){
-    int damage = ((int)(Math.random()*6) + 6);
-    other.applyDamage(damage);
-    return this + " calls in Air Support and hits " + other + " for " + damage + " damage.";
+      int damage = ((int)(Math.random()*6) + 6);
+      other.applyDamage(damage);
+      return this + " calls Putin and orders H-Bombs at " + other + ", dealing " + damage + " damage!!";
     }
-      return this + " does not have Air Support.";
-  }		
+      return this + " has been abandoned by Putin.";
+  }
 }

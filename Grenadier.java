@@ -3,7 +3,7 @@ public class Grenadier extends Adventurer{
   private int molotovsLeft;
   private int molotovsMax;
   public Grenadier(){
-    super("NoName");
+    super("Local Grenadier",25);
     this.molotovsLeft = 3;
     this.molotovsMax = 3;
   }
@@ -37,31 +37,31 @@ public class Grenadier extends Adventurer{
     }
     String message =  this + " attacked " + other + " and dealt " + damage + " points of damage";
     if (specialRestored){
-      message += " and regained 1 molotov";
+      message += " and might have regained 1 molotov";
     }
     message += ".";
     return message;
   }
   public String support(Adventurer other){
-    if (other.getmaxHP() > other.getHP() + 3){
-    other.setHP(other.getHP() + 3);
-    return this + " gives an energy drink to " + other + " and restored 3 hp";
+    if (other.getmaxHP() > other.getHP() + 4){
+    other.setHP(other.getHP() + 5);
+    return this + " gives an energy drink to " + other + " and restored 5 hp";
     }
-    return other + "'s MaxHP is full";
+    return other + "'s HP is full";
   }
   public String support(){
-    if (this.getmaxHP() > this.getHP() + 4){
-    this.setHP(this.getHP() + 4);
-    return this + "drinks an energy drink and restored 4 hp";
+    if (this.getmaxHP() > this.getHP() + 6){
+    this.setHP(this.getHP() + 7);
+    return this + "drinks an energy drink and restored 7 hp";
   }
-    return this + "'s MaxHP is full";
+    return this + " tried to use BloxyCola but they are full";
   }
   public String specialAttack(Adventurer other){
     if (this.getSpecial() > 0){
-    int damage = ((int)(Math.random()*4) + 8);
+    int damage = ((int)(Math.random()*5) + 8);
     other.applyDamage(damage);
     return this + " throws a molotov and hits " + other + " for " + damage + " damage.";
     }
       return this + " does not have any molotovs.";
-  }		
+  }
 }

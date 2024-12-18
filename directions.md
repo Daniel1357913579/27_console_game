@@ -17,7 +17,7 @@ Example:
 
 ### Player class (superclass):
 
-* What things must all types of players have as their properties? Focus on big ideas about the player itself, not items or possessions. 
+* What things must all types of players have as their properties? Focus on big ideas about the player itself, not items or possessions.
 
 ### Subclasses:
 
@@ -33,13 +33,13 @@ Example:
     * Soldier / Spy / Politician
     * Princess / Pony / Monster
     * Others
- 
+
 Are we going to use the superclass to instantiate objects?
 
 ### Let's start
 
 * Use the code provided for the superclass Adventurer.
 * Implement one subclass of Adventurer and test it with a driver. You must implement all abstract methods.
-* In the driver, the player should be declared as Adventurer and instantiated as the subclass (Adventurer player1 = new Warrior("Bob", 10);).
+        * In the driver, the player should be declared as Adventurer and instantiated as the subclass (Adventurer player1 = new Warrior("Bob", 10);).
 * Your player has some HP (health points) values at the beginning of the game.
-* Your attack/support/special methods return Strings because you want the option of printing the text of what happened. 
+* Your attack/support/special methods return Strings because you want the option of printing the text of what happened.
